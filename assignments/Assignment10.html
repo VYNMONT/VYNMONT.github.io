@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Assignment 10</title>
+    <style>
+      #payBills,
+      #payBills caption,
+      #payBills th,
+      #payBills td {
+        border: 2px solid white;
+        border-collapse: collapse;
+        padding: 20px;
+      }
+      #payBills {
+        background-color: skyblue;
+        margin-bottom: 48px;
+      }
+      #payBillsRowSpan {
+        background-color: lightgrey;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="payBills">
+      <h1>Monthly Bills</h1>
+      <colgroup>
+        <col id="payBillsRowSpan" rowspan="2">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Bill</th>
+          <th>April</th>
+          <th>May</th>
+          <th>June</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Phone</th>
+          <td>$120</td>
+          <td>$140</td>
+          <td>$140</td>
+        </tr>
+        <tr>
+          <th>Gas</th>
+          <td>$90</td>
+          <td>$100</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <th>Food</th>
+          <td>$280</td>
+          <td>$280</td>
+          <td>$300</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
