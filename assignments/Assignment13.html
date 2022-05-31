@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Grid Examples</title>
+    <title>Assignment 13</title>
     <style>
-      .myGrid {
+      .Gridd {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, auto);
         grid-auto-rows: minmax(50px, auto);
+        grid-template-areas:
+          "Headerr Headerr Headerr "
+          "sidenav content content";
+          "Footerr Footerr Footerr"
+
       }
       header {
-        background-color: lightgreen;
+        background-color: purple;
         padding: 36px;
-        grid-column: 1 / 4;
-        grid-row: 1;
+        grid-area: Headerr;
       }
       nav {
-        background-color: #DDFFDD;
+        font-size: 25px;
+        background-color: violet;
         padding: 36px;
-        grid-column: 1;
-        grid-row: 2;
+        grid-area: sidenav;
       }
       main {
         padding: 36px;
-        grid-column: 2 / 4;
-        grid-row: 2;
+        grid-area: content;
+      }
+      footer {
+        background-color: purple;
+        padding: 20px;
+        grid-area: Footerr;
       }
     </style>
   </head>
   <body>
-    <div class="myGrid">
+    <div class="Gridd">
       <header>
-        <h1>This is how page layouts can be done with grids (and lines)</h1>
+        <h1>Heading Website</h1>
       </header>
-      <nav>NAVIGATION GOES HERE</nav>
+      <nav>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Contact</a></li.
+        </ul>
+      </nav>
       <main>
         <p>
           Minim distinguantur laborum elit constias, est aliqua
@@ -56,6 +71,7 @@
           cupidatat quo constias.
         </p>
       </main>
+      <footer>Copyright</footer>
     </div>
   </body>
 </html>
