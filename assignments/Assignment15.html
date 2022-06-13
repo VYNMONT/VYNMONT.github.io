@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Assignment 15</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #hero {
+        align-items: center;
+        background-color: #6901FF;
+        display: flex;
+        height: 500px;
+        justify-content: center;
+      }
+      #countdown {
+        display: inline-block;
+      }
+      #header {
+        position: absolute;
+        top:  15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      #logo {
+        width: 20%;
+        height: auto;
+        top:  30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hero">
+      <h1 id="header">Graduation Countdown</h1>
+      <h1 id="countdown"></h1>
+      <img id="logo" src="../images/logo.png" alt="Logo">
+    </div>
+    <script type="text/javascript">
+      let deadline = new Date('September 10, 2022 13:00:00');
+
+      function setCountdown() {
+        let now = new Date();
+
+
+        let timeLeft = deadline.getTime() - now.getTime();
+
+        let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let minutes = Math.floor(
+          (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        let seconds = Math.floor(
+          (timeLeft % (1000 * 60)) / 1000
+        );
+
+        document.getElementById('countdown').innerHTML =
+          days + ' days ' + hours + ' hours ' + minutes + ' minutes '
+            + seconds + ' seconds ';
+      }
+
+      setInterval(setCountdown, 1000);
+    </script>
+  </body>
+</html>
