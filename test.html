@@ -15,19 +15,26 @@
   }
   .layout {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+    grid-gap: 1em;
+    max-width: 1800px;
+    width: 1000px;
+    overflow: hidden;
+    word-wrap: break-break-word
   }
   article {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 30;
+    text-align: right;
+    font-size: 25px;
+    background-color: red;
   }
   aside {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 30;
   }
   aside img {
-    width: 160%;
+    width: 120%;
     height: auto;
     padding-left: 22px;
   }
@@ -49,14 +56,15 @@
       </script>
    <div class="layout">
       <article>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+         tempor incididunt utlabore et dolore magna aliqua. Ut enim ad minim veniam
+         quis nostrud exercitation ullamco laboris
         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum.
       </article>
       <aside>
-        <img src="images/head.png" alt="head">
+        <img src=images/head.png" alt="head">
       </aside>
     <footer>Copyright</footer>
    </div>
