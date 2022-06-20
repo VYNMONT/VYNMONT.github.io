@@ -6,7 +6,8 @@
   </head>
   <body>
     <div id="slideshow">
-      <img id="slide1" class="slideshowImage" src="../../images/cat.png" />
+      <img id="slide1" class="slideshowImage" src="../../images/cat.png" alt="cat"
+      >
       <img id="slide2" class="slideshowImage" src="../../images/dog.jpeg" />
       <img id="slide3" class="slideshowImage" src="../../images/forest.gif" />
       <img id="slide4" class="slideshowImage" src="../../images/clouds.gif" />
