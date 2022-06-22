@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>About</title>
+    <title>Navbar</title>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -12,29 +12,33 @@
   nav {
     text-align: center;
     overflow-x: hidden;
-    padding-top: 0px;
     height: 25px;
+  }
+  nav img{
+    width: 60px;
+    height: 60px;
   }
   nav a {
     padding: 7px;
     text-decoration: none;
-    font-size: 25px;
     color: white;
+  }
+  nav a .active {
   }
 </style>
   <body>
    <nav>
-      <a href="index.html">
-        <img src="images/home.png" alt="home"
+      <a href="#">
+         <img src="images/navi/home_inactive.png" alt="home">
       </a>
-      <a href="About.html">
-        <img src="images/about.png" alt="about"
+      <a href="#">
+        <img src="images/navi/about_inactive.png" alt="about">
       </a>
-      <a href="Portfolio.html">
-        <img src="images/port.png" alt="portfolio"
+      <a href="#">
+        <img src="images/navi/port_inactive.png" alt="portfolio">
       </a>
-      <a href="Contact.html">
-        <img src="images/contact.png" alt="contact"
+      <a href="#">
+        <img src="images/navi/contact_inactive.png" alt="contact">
       </a>
     </nav>
  </body>

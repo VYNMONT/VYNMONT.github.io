@@ -9,15 +9,52 @@
     </script>
   </head>
   <style>
-  body {
-    background-color: black;
+  #layout2 {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    grid-template-columns: 50% 1fr;
+    grid-column-gap: 0px;
+    height: calc(100vh - 90px);
+    grid-template-areas:
+    "display article";
+  }
+  article2 {
+    grid-area: article;
+    padding-top: 250px;
+    padding-right: 25px;
+    text-align: right;
+    font-size: 25px;
+  }
+  article2 h1 {
+  }
+  display2 {
+    grid-area: display;
+    overflow: hidden;
+  }
+  display2 img {
+    width: 90%;
+    height: 90%;
+    padding-top: 25px;
+    padding-left: 25px;
+    object-fit: contain;
   }
   </style>
   <body>
-    <div id=navbar></d>
-      <script>
-        $(function(){
-        $("#navbar").load("navbar.html");});
-  </script>
+
+  <div id="layout2">
+    <article2>
+      <h1>Portfolio</h1>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt utlabore et dolore magna aliqua. Ut enim ad minim veniam
+      quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
+     </p>
+   </article2>
+    <display2>
+      <img src="images/head.png" alt="head">
+    </display2>
   </body>
 </html>

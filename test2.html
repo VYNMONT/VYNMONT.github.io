@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>About</title>
+    <title>Test 2</title>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -39,21 +39,26 @@
   .pages section:nth-child(4) {
   }
   nav {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     overflow-y: hidden;
   }
   #navbar {
 
   }
   footer {
-    background-color: white;
-    color: black;
+    color: #6901FF;
     text-align: center;
   }
   </style>
   <body>
     <div class="pages">
-      <section>Home</section>
+      <section>
+        <div id=Home></div>
+            <script>
+              $(function(){
+              $("#Home").load("Home.html");});
+            </script>
+      </section>
       <section>
         <div id=About></div>
             <script>
@@ -61,8 +66,20 @@
               $("#About").load("About.html");});
             </script>
       </section>
-      <section>Portfolio</section>
-      <section>Contact</section>
+      <section>
+        <div id=Portfolio></div>
+            <script>
+              $(function(){
+              $("#Portfolio").load("Portfolio.html");});
+            </script>
+      </section>
+      <section>
+        <div id=Contact></div>
+            <script>
+              $(function(){
+              $("#Contact").load("Contact.html");});
+            </script>
+      </section>
     </div>
     <nav id=navbar></nav>
     <script>

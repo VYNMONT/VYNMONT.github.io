@@ -9,15 +9,60 @@
     </script>
   </head>
   <style>
-  body {
-    background-color: black;
+  #layout3 {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    grid-template-columns: 50% 1fr;
+    grid-column-gap: 0px;
+    height: calc(100vh - 90px);
+    grid-template-areas:
+    "display article";
+    "display article"
+    "display article"
+  }
+  article3 {
+    grid-area: article;
+    padding-top: 250px;
+    padding-right: 25px;
+    text-align: right;
+    font-size: 25px;
+  }
+  article3 h1 {
+  }
+  display3 {
+    grid-area: display;
+    overflow: hidden;
+  }
+  display3 img {
+    width: 90%;
+    height: 90%;
+    padding-top: 25px;
+    padding-left: 25px;
+    object-fit: contain;
   }
   </style>
   <body>
-    <div id=navbar></d>
-      <script>
-        $(function(){
-        $("#navbar").load("navbar.html");});
-  </script>
+
+  <div id="layout3">
+    <article3>
+      <h1>Contact Me</h1>
+        <form>
+          <div>
+            <label for="NameId">Last Name , First Name:</label>
+            <input type="text" id="NameId" name="Name">
+          </div>
+          <p></p>
+          <div>
+            <label for="InquryId">Please Describe Your Inquiry</label>
+          <p></p>
+            <textarea id="InquiryId" name="Inquiry" rows="5" cols="30">Default text</textarea>
+          </div>
+          <div id="buttonContainer">
+            <input type="button" value="Submit">
+        </form>
+   </article3>
+    <display3>
+      <img src="images/navi/contact_active.png" alt="head">
+    </display3>
   </body>
 </html>
