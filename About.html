@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>About</title>
+    <title>Test</title>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -13,53 +13,95 @@
     background-color: black;
     color: white;
   }
-  #head{
-    width: 40%;
-    height: auto;
-    margin-top:
-    float: left;
+  #layout {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    grid-template-columns: 50% 1fr;
+    grid-column-gap: 0px;
+    height: calc(100vh - 90px);
+    grid-template-areas:
+    "display article";
   }
-  h1 {
+  article {
+    grid-area: article;
+    padding-top: 250px;
+    padding-right: 25px;
+    text-align: right;
+    font-size: 25px;
+    background-color: blue;
+  }
+  article h1 {
+  }
+  display {
+    grid-area: display;
+    overflow: hidden;
+  }
+  display img {
+    width: 90%;
+    height: 90%;
+    padding-top: 25px;
+    padding-left: 25px;
+    object-fit: contain;
+  }
 
+
+  @keyframes wipe-enter {
+  	0% {
+  		transform: scale(0, .025);
+  	}
+  	50% {
+  		transform: scale(1, .025);
+  	}
   }
-  p {
-    text-align: right;
+  @media (prefers-reduced-motion: no-preference) {
+    .displayAnim {
+      animation: wipe-enter 1s infinite;
+    }
   }
-  footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: right;
+   .displayAnim {
   }
+
+  .displayAnim-box{
+  }
+  @media (prefers-reduced-motion: no-preference) {
+  .displayAnim-animation {
+    animation: wipe-enter 1s 1;
+  }
+}
   </style>
   <body>
-    <div id=navbar></div>
-      <script>
-        $(function(){
-        $("#navbar").load("navbar.html");});
-      </script>
-  <h1>About Me</h1>
-    <p>
+
+  <div id="layout">
+    <article>
+      <h1>Title</h1>
+      <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <img id="head"
-     src="images/head.png"
-     alt="head">
-    <footer>Copyright</footer>
+      tempor incididunt utlabore et dolore magna aliqua. Ut enim ad minim veniam
+      quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
+     </p>
+    </article>
+    <script>
+     const observer = new IntersectionObserver(entries => {
+     entries.forEach(entry => {
+      const displayAnim = entry.target.querySelector('.displayAnim');
+
+      if (entry.isIntersecting) {
+       displayAnim.classList.add('displayAnim-animation');
+        return;
+      }
+
+      displayAnim.classList.remove('displayAnim-animation');
+    });
+   });
+      observer.observe(document.querySelector('.displayAnim-box'));
+    </script>
+    <display class="displayAnim-box">
+      <img class="displayAnim"
+      src="images/head.png" alt="head">
+    </display>
+   </div>
   </body>
 </html>
