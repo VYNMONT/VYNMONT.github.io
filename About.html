@@ -38,37 +38,12 @@
     padding-left: 25px;
     object-fit: contain;
   }
-
-
-  @keyframes wipe-enter {
-  	0% {
-  		transform: scale(0, .025);
-  	}
-  	50% {
-  		transform: scale(1, .025);
-  	}
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .displayAnim {
-      animation: wipe-enter 1s infinite;
-    }
-  }
-   .displayAnim {
-  }
-
-  .displayAnim-box{
-  }
-  @media (prefers-reduced-motion: no-preference) {
-  .displayAnim-animation {
-    animation: wipe-enter 1s 1;
-  }
-}
   </style>
   <body>
 
   <div id="layout">
     <article>
-      <h1>A Little Bit About Me </h1>
+      <h1>About Me</h1>
       <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt utlabore et dolore magna aliqua. Ut enim ad minim veniam
@@ -77,26 +52,9 @@
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
       officia deserunt mollit anim id est laborum.
      </p>
-    </article>
-    <script>
-     const observer = new IntersectionObserver(entries => {
-     entries.forEach(entry => {
-      const displayAnim = entry.target.querySelector('.displayAnim');
-
-      if (entry.isIntersecting) {
-       displayAnim.classList.add('displayAnim-animation');
-        return;
-      }
-
-      displayAnim.classList.remove('displayAnim-animation');
-    });
-   });
-      observer.observe(document.querySelector('.displayAnim-box'));
-    </script>
-    <display class="displayAnim-box">
-      <img class="displayAnim"
-      src="images/head.png" alt="head">
+   </article>
+    <display>
+      <img src="images/head.png" alt="head">
     </display>
-   </div>
   </body>
 </html>

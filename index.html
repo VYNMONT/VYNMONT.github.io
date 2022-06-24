@@ -10,14 +10,84 @@
   </head>
   <style>
   body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     background-color: black;
+    color: white;
+  }
+  .pages {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow: auto;
+    overflow-y: hidden;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    height: 90vh;
+    scroll-snap-align: start;
+  }
+  .pages section:nth-child(1) {
+  }
+  .pages section:nth-child(2) {
+  }
+  .pages section:nth-child(3) {
+  }
+  .pages section:nth-child(4) {
+  }
+  nav {
+    padding-bottom: 60px;
+    overflow-y: hidden;
+  }
+  #navbar {
+
+  }
+  footer {
+    color: #6901FF;
+    text-align: center;
   }
   </style>
   <body>
-    <div id=navbar></div>
-      <script>
-        $(function(){
-        $("#navbar").load("navbar.html");});
-      </script>
+    <div class="pages">
+      <section>
+        <div id=Home></div>
+            <script>
+              $(function(){
+              $("#Home").load("Home.html");});
+            </script>
+      </section>
+      <section>
+        <div id=About></div>
+            <script>
+              $(function(){
+              $("#About").load("About.html");});
+            </script>
+      </section>
+      <section>
+        <div id=Portfolio></div>
+            <script>
+              $(function(){
+              $("#Portfolio").load("Portfolio.html");});
+            </script>
+      </section>
+      <section>
+        <div id=Contact></div>
+            <script>
+              $(function(){
+              $("#Contact").load("Contact.html");});
+            </script>
+      </section>
+    </div>
+    <nav id=navbar></nav>
+    <script>
+      $(function(){
+      $("#navbar").load("navbar.html");});
+    </script>
+    <footer>
+     <p>Copyright<p>
+    </footer>
   </body>
 </html>
